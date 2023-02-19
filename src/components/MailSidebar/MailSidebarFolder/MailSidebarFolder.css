@@ -1,0 +1,72 @@
+.sidebar_mail__folder{
+    height: 36px;
+    border-radius: 8px;
+    color: var(--color-primary-light);
+    padding: 0 var(--space-mid);
+    cursor: pointer;
+}
+
+.sidebar_mail__folder:hover{
+    background-color: #a999eb25;
+}
+
+.sidebar_mail__folder:not(:first-child){
+    margin-top: 3px;
+}
+
+.sidebar_mail__folder_current{
+    font-weight: var(--fw-bigger);
+    color: var(--color-primary-lighter);
+    background-color: #a999eb25;
+}
+
+.sidebar_mail__folder > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_mail__folder__icon{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_mail__folder__icon > svg {
+    fill: currentColor;
+    height: inherit;
+    width: inherit;
+}
+
+.sidebar_mail__folder__name{
+    font-size: var(--fs-normal);
+    color: var(--color-primary-lighter);
+    margin-left: var(--space-small);
+    margin-right: auto;
+}
+
+.sidebar_mail__folder__refresh-btn {
+    display: flex;
+    align-items: center;
+
+}
+
+.sidebar_mail__folder__refresh-btn > #folder-refresh-btn {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    fill: currentColor;
+    cursor: pointer;
+}
+
+.sidebar_mail__folder__count{
+    font-size: var(--fs-small);
+    margin-left: var(--space-small);
+    padding: 4px 8px;
+}
+
+.sidebar_mail__folder__count_current{
+    background-color: var(--color-primary);
+    font-weight: var(--fw-normal);
+    border-radius: 5px;
+    
+}

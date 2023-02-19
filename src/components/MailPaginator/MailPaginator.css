@@ -1,0 +1,17 @@
+.mail-paginator_mobile{
+    display: block;
+}
+
+.mail-paginator_desktop{
+    display: none;
+}
+
+@media all and (min-width: 950px) {
+    .mail-paginator_mobile{
+        display: none;
+    }
+
+    .mail-paginator_desktop{
+        display: block;
+    }
+}

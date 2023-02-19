@@ -1,0 +1,13 @@
+.sidebar_mail__more-folders{
+    font-size: var(--fs-small);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_mail__more-folders > div {
+    width: 100%;
+}
+
+.sidebar_mail__more-folders__content_margin{
+    margin-bottom: var(--space-small);
+}

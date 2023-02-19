@@ -1,0 +1,15 @@
+.sidebar_mail__label-folders{
+    color: var(--color-primary-light);
+    border-top: 1px solid var(--color-border-light);
+    font-size: var(--fs-small);
+}
+
+.sidebar_mail__label-folders__content{
+    padding: 0 var(--space-mid);
+}
+
+.sidebar_mail__label-folders__content__empty-folder{
+    height: 36px;
+    display: flex;
+    align-items: center;
+}

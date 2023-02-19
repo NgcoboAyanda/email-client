@@ -1,0 +1,29 @@
+.app__mail{
+    height: 100%;
+}
+
+.app__mail > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__mail__main {
+    flex: 1;
+    background-color: var(--color-primary-dark);
+}
+
+.app__mail__main > div {
+    height: 100%;
+    display: flex;
+}
+
+.app__mail__main > div > * {
+    height: 100%;
+}
+
+.app__mail__content{
+    flex: 1;
+    border-radius: 8px;
+    background-color: var(--main-content-bg);
+}

@@ -1,0 +1,19 @@
+.desktop-paginator > div {
+    display: flex;
+}
+
+.desktop-paginator__count{
+    margin: 0 var(--space-mid);
+    margin-top: 2px;
+    font-size: var(--fs-normal);
+}
+
+.desktop-paginator__count > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-paginator__count__divider{
+    margin: 0 4px;
+}

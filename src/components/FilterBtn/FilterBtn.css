@@ -1,0 +1,64 @@
+.filter-btn > div {
+    display: flex;
+}
+
+.filter-btn__item_mobile{
+    display: block;
+}
+
+.filter-btn__item_desktop{
+    display: none !important;
+}
+
+.filter-btn__button{
+    background-color: transparent;
+    padding: 4px 11px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: var(--fs-small);
+}
+
+.filter-btn__button:hover{
+    background-color: rgba(0, 0, 0, 0.048);
+}
+
+.filter-btn__button > div{
+    display: flex;
+    align-items: center;
+}
+
+.filter-btn__button__icon{
+    height: 16px;
+    width: 16px;
+}
+
+.filter-btn__button__label{
+    margin-left: 4px;
+    padding-top: 2px;
+}
+
+#filter-all-btn{
+    display: flex;
+    align-items: center;
+}
+
+#filter-read-btn{
+    display: flex;
+    align-items: center;
+}
+
+#filter-unread-btn{
+    display: flex;
+    align-items: center;
+}
+
+@media all and (min-width: 950px){
+    .filter-btn__item_mobile{
+        display: none;
+    }
+
+    .filter-btn__item_desktop{
+        display: flex !important;
+    }
+}

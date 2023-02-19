@@ -1,0 +1,6 @@
+.input_search{
+    width: 250px;
+    color: var(--color-primary-light);
+    border: 1px solid currentColor;
+    border-radius: 7px;
+}

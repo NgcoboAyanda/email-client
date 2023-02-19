@@ -1,0 +1,25 @@
+.mobile-paginator__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 35px;
+    padding: 0 var(--space-small);
+    border-radius: 8px;
+}
+
+.mobile-paginator__btn:hover{
+    background-color: rgba(0, 0, 0, 0.048);
+}
+
+.mobile-paginator__btn > div{
+    display: flex;
+}
+
+.mobile-paginator__btn__icon {
+    margin-left: var(--space-small);
+    height: 16px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

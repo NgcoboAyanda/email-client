@@ -1,0 +1,28 @@
+.app__mail__content{
+    flex: 1;
+}
+
+.app__mail__content > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__mail__content__column{
+    flex: 1;
+}
+
+.app__mail__content__column > div {
+    display: flex;
+    height: 100%;
+}
+
+.app__mail__content__column__list{
+    flex: 3;
+    background-color: yellow;
+}
+
+.app__mail__content__column__content{
+    flex: 4;
+    background-color: red;
+}

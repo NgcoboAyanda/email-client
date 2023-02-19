@@ -1,0 +1,17 @@
+.sidebar-btn{
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    color: var(--fc-light);
+}
+
+.sidebar-btn__icon{
+    display: flex;
+    align-items: center;
+    
+}
+
+.sidebar-btn__icon > svg {
+    fill: currentColor;
+}

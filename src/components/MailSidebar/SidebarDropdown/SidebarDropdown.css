@@ -1,0 +1,17 @@
+.sidebar__dropdown{
+    padding-left: var(--space-mid);
+    margin-top: var(--space-small);
+    margin-bottom: 2px;
+    color: var(--color-primary-light);
+    cursor: pointer;
+}
+
+.sidebar__dropdown > div {
+    height: 36px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__dropdown__text{
+    padding-left: var(--space-small);
+}

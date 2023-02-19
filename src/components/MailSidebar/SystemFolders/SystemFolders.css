@@ -1,0 +1,4 @@
+.sidebar_mail__system-folders > div {
+    display: flex;
+    flex-direction: column;
+}

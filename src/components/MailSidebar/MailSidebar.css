@@ -1,0 +1,65 @@
+.sidebar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-primary-dark);
+    padding: 0 var(--space-small);
+}
+
+/* on smaller screens- the sidebar is only visible if the class is sidebar_open */
+.sidebar_open{
+    display: block;
+}
+
+.sidebar_closed{
+    display: none;
+}
+
+.sidebar > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__header{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    margin-bottom: var(--space-small);
+}
+
+.sidebar__header > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar_mail__msg-btn{
+    display: none;
+    margin-bottom: var(--space-small);
+}
+
+@media screen and (min-width: 680px){
+section.sidebar{
+    position: unset;
+    width: 250px;
+}
+
+/* on bigger screens- the sidebar has to always be visible */
+.sidebar_open{
+    display: block;
+}
+
+.sidebar_closed{
+    display: block;
+}
+
+.sidebar__header{
+    display: none;
+    margin-bottom: 0;
+}
+
+.sidebar_mail__msg-btn{
+    display: block;
+}
+}

@@ -1,0 +1,33 @@
+.sort-btn{
+    display: flex;
+}
+
+.sort-btn__button{
+    background-color: transparent;
+    padding: 4px 11px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: var(--fs-small);
+}
+
+.sort-btn__button:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+}
+
+.sort-btn__button > div{
+    display: flex;
+}
+
+.sort-btn__button__label{
+    font-size: var(--fs-small);
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    padding-top: 2px;
+}
+
+.sort-btn__button__icon{
+    height: 16px;
+    width: 16px;
+}

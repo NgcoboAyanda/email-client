@@ -1,0 +1,16 @@
+.btn{
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.btn_size-big{
+    font-size: var(--fs-mid);
+    padding: 12px 0;
+    width: 100%;
+}
+
+.btn_variant-filled{
+    color: var(--fc-lighter);
+    background-color: var(--color-primary);
+}

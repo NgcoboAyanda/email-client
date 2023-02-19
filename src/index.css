@@ -1,0 +1,143 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'); /* Inter font */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--ff-default);
+}
+
+:root{
+  /* colors */
+  --color-primary-lighter: #d9cffffd;;
+  --color-primary-light: #a999ebcb; 
+  --color-primary: #6d4aff;
+  --color-primary-mid: #5c44c1;
+  --color-primary-dark: #1b1340;
+
+  /* borders */
+  --color-border-light: #a999eb51;
+  --color-border-mid: #8e8e8e65;
+  --color-border-dark: #676767a9;
+
+  /* backgrounds */
+  --main-content-bg: white;
+
+  /* fonts */
+  --fc-lighter: rgb(246, 246, 246);
+  --fc-light: rgb(235, 235, 235);
+
+  --ff-default: 'Inter', sans-serif;
+
+  --fs-small: 11px;
+  --fs-normal: 14px;
+  --fs-mid: 16px;
+  --fs-big: 18px;
+
+  --fw-small: 300;
+  --fw-normal: 400;
+  --fw-mid: 500;
+  --fw-big: 600;
+  --fw-bigger:800;
+
+  /* paddings, magin */
+  --space-small: 8px;
+  --space-mid: 16px;
+  --space-big: 24px;
+  --space-extreme: 32px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root{
+  height: 100%;
+}
+
+/* inputs and buttons */
+
+.input{
+  width: 100%;
+  height: 35px;
+}
+
+.input > div {
+  height: 100%;
+  display: flex;
+}
+
+.input__icon{
+  height: 100%;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input__icon > svg {
+  height: 50%;
+  fill: currentColor;
+}
+
+.input__box{
+  flex: 1;
+}
+
+.input__box > input {
+  padding-right: var(--space-small);
+  font-size: var(--fs-normal);
+  color: var(--color-primary-light);
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.ui-btn{
+  background-color: transparent;
+  border: none;
+  color: var(--fc-light);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.ui-btn__icon > svg {
+  fill: currentColor;
+}
+
+.ui-btn_size-normal{
+  height: 35px;
+  width: 35px;
+}
+
+/* svgs */
+.ui-icon{
+  fill: currentColor;
+}
+
+.ui-icon_small{
+  height: 16px;
+  width: 16px;
+}
+
+.ui-icon_normal{
+  height: 25px;
+  width: 25px;
+}
+
+.ui-icon_unrotated{
+  transform: rotate(0);
+}
+
+.ui-icon_rotated90{
+  transform: rotate(-90deg);
+}
+
+/* break points are 680px, 950px*/
