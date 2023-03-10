@@ -6,6 +6,19 @@ const initialState = {
             emails:[
                 {
                     sender: {
+                        name: 'CitiBank',
+                        email: 'emma@citibank.com',
+                        logo: ""
+                    },
+                    time: '19:18',
+                    subject: "Unfortunately, your credit card application was declined.",
+                    content: "Mr. John Doe, we are sorry to inform you that your application for a credit card was unsuccessful.",
+                    read: false,
+                    selected: false
+                }
+                ,
+                {
+                    sender: {
                         name: 'ClearScore',
                         email: 'em@clearscore.co.za',
                         logo: ""
