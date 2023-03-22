@@ -1,0 +1,27 @@
+.email-preview__icon_empty{
+    display: flex;
+    background-color: #e5e4e1;
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: var(--font-color);
+}
+
+.email-preview__icon_checked{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    background-color: var(--color-primary);
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: var(--font-color);
+}
+
+.email-preview__icon_checked > div > svg {
+    width: 17px;
+    height: 17px;
+    fill: white;
+}

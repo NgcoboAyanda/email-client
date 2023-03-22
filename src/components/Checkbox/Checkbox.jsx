@@ -2,7 +2,7 @@ import React from "react";
 
 import './Checkbox.css';
 
-const Checkbox = ({checked=false, setChecked}) => {
+const Checkbox = ({checked=false, setChecked, onClick=null}) => {
 
     const renderCheckboxTick = () => {
         if(checked) {
@@ -17,7 +17,12 @@ const Checkbox = ({checked=false, setChecked}) => {
     }
 
     return (
-        <div id="checkbox" className={`checkbox ${checked?'checkbox_checked':''}`} onClick={()=>setChecked(!checked)}>
+        <div id="checkbox" className={`checkbox ${checked?'checkbox_checked':''}`} onClick={()=>{
+            setChecked(!checked);
+            if(onClick){
+                onClick();
+            }
+        }}>
             <div>
                 <div className="checkbox__tick">
                     {renderCheckboxTick()}

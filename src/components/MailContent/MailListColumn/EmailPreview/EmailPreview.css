@@ -11,7 +11,7 @@
 }
 
 .email-preview:hover{
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.109);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.065);
 }
 
 .email-preview:first-child{
@@ -45,17 +45,6 @@
     left: -16px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.email-preview__icon__empty{
-    display: flex;
-    background-color: #e5e4e1;
-    height: 35px;
-    width: 35px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    color: var(--font-color);
 }
 
 .email-preview__content {

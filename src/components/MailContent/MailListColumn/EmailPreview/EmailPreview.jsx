@@ -1,9 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSingleEmailSelected } from "../../../../features/mail/mail";
 
 import './EmailPreview.css';
+import EmailPreviewIcon from "./EmailPreviewIcon/EmailPreviewIcon";
 
 const EmailPreview = ({id='', email}) => {
-    const {sender, time, subject, read} = email;
+    const {sender, time, subject, read, selected, id: emailId} = email;
+    const {currentOpenFolder} = useSelector(state => state.mail)
+
+    const dispatch = useDispatch();
 
     const renderEmailPreviewBullet = () => {
         //if email has not been read we want to show a bullet symbol on the left side of the icon
@@ -18,12 +24,22 @@ const EmailPreview = ({id='', email}) => {
         }
     }
 
+    const dispatchToggleSingleEmailSelected = () => {
+        dispatch( toggleSingleEmailSelected({
+            id: emailId,
+            folder: currentOpenFolder,
+            previousState: selected
+        }) )
+    }
+
     const renderEmailPreviewIcon = () => {
         if(!sender.logo){
             return (
-                <span className="email-preview__icon__empty">
-                    {sender.name[0]}
-                </span>
+                <EmailPreviewIcon
+                    sender={sender}
+                    selected={selected}
+                    onClick={dispatchToggleSingleEmailSelected}
+                />
             )
         }
     }

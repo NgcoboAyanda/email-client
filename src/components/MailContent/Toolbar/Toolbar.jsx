@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleAllEmailSelected } from '../../../features/mail/mail';
 import Checkbox from '../../Checkbox/Checkbox';
 import MailPaginator from '../../MailPaginator/MailPaginator';
 import UtilityButton from '../../UtilityButton/UtilityButton';
@@ -7,6 +9,13 @@ import './Toolbar.css';
 
 const Toolbar = () => {
     const [selectCheckboxChecked, setSelectCheckboxChecked] = useState(false);
+    const {currentOpenFolder} = useSelector(state => state.mail)
+
+    const dispatch = useDispatch();
+
+    const dispatchToggleAllEmailSelected = () => {
+        dispatch( toggleAllEmailSelected({folder: currentOpenFolder}) )
+    }
 
     return (
         <div id="mail-toolbar" className="mail-toolbar">
@@ -14,6 +23,7 @@ const Toolbar = () => {
                 <Checkbox
                     checked={selectCheckboxChecked}
                     setChecked={setSelectCheckboxChecked}
+                    onClick={dispatchToggleAllEmailSelected}
                 />
                 <UtilityButton
                     label="More Selections"
