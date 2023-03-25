@@ -23,7 +23,7 @@ const Toolbar = () => {
         <div id="mail-toolbar" className="mail-toolbar">
             <div>
                 <Checkbox
-                    checked={totalNumberOfEmails===numberOfSelectedEmails?true:false}
+                    checked={totalNumberOfEmails != 0 &&totalNumberOfEmails===numberOfSelectedEmails?true:false}
                     setChecked={setSelectCheckboxChecked}
                     onClick={dispatchToggleAllEmailSelected}
                 />
