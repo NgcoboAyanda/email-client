@@ -1,0 +1,23 @@
+.mail-content-column__welcome{
+    text-align: center;
+}
+
+.mail-content-column__welcome__text{
+    display: flex;
+    flex-direction: column;
+}
+
+.mail-content-column__welcome__text > .name{
+    font-size: 36px;
+}
+
+.mail-content-column__welcome__text > .unread {
+    font-size: var(--fs-normal);
+    margin-top: var(--space-big);
+    padding-bottom: var(--space-extreme);
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.mail-content-column__welcome__icon{
+    margin-top: var(--space-extreme);
+}

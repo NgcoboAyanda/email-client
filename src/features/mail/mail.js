@@ -87,6 +87,9 @@ const initialState = {
             selected: 0
         },    
     },
+    emailViewer: {
+        currentlyOpenEmail: null
+    },
     customFolders: {},
     labels: [],
     currentOpenFolder: 'inbox',

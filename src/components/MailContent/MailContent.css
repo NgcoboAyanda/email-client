@@ -19,10 +19,19 @@
 
 .app__mail__content__column__list{
     flex: 3;
+    border-right: 1px solid rgb(231, 231, 231);
     background-color: white;
 }
 
 .app__mail__content__column__content{
+    padding: 0 var(--space-mid);
     flex: 4;
-    background-color: red;
+    background-color: white;
+}
+
+.app__mail__content__column__content > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
