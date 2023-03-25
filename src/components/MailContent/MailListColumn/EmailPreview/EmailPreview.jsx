@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleSingleEmailSelected } from "../../../../features/mail/mail";
+import { toggleSingleEmailSelected, ViewEmail } from "../../../../features/mail/mail";
 
 import './EmailPreview.css';
 import EmailPreviewIcon from "./EmailPreviewIcon/EmailPreviewIcon";
@@ -45,7 +45,7 @@ const EmailPreview = ({id='', email}) => {
     }
 
     return (
-        <div className={`email-preview email-preview_${read?'read':'unread'}`} id={id}>
+        <div className={`email-preview email-preview_${read?'read':'unread'}`} id={id} onClick={()=>dispatch(ViewEmail({ email }))}>
             <div>
                 <div className="email-preview__bullet">
                     {renderEmailPreviewBullet()}

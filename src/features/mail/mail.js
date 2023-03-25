@@ -150,10 +150,17 @@ const mailSlice = createSlice({
                     email.selected = !previousState;
                 }
             })
+        },
+        ViewEmail: (state, action) => {
+            const {email} = action.payload;
+            return {...state, emailViewer: {...state.emailViewer, currentlyOpenEmail: email}};
+        },
+        ClearEmailViewer: (state, action) => {
+            return {...state, emailViewer: {...state.emailViewer, currentlyOpenEmail: null}};
         }
     }
 })
 
-export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected } = mailSlice.actions;
+export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer } = mailSlice.actions;
 
 export default mailSlice;

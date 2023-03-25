@@ -31,6 +31,7 @@
 
 .app__mail__content__column__content > div {
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
