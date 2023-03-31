@@ -1,35 +1,35 @@
-.app__mail__content{
-    flex: 1;
+.app__mail__main__content{
+    flex: 1 0 0;
 }
 
-.app__mail__content > div {
+.app__mail__main__content > div {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.app__mail__content__column{
+.app__mail__main__content__column{
     flex: 1;
 }
 
-.app__mail__content__column > div {
+.app__mail__main__content__column > div {
     display: flex;
     height: 100%;
 }
 
-.app__mail__content__column__list{
+.app__mail__main__content__column__list{
     flex: 3;
     border-right: 1px solid rgb(231, 231, 231);
     background-color: white;
 }
 
-.app__mail__content__column__content{
+.app__mail__main__content__column__content{
     padding: 0 var(--space-mid);
-    flex: 4;
+    flex: 5;
     background-color: white;
 }
 
-.app__mail__content__column__content > div {
+.app__mail__main__content__column__content > div {
     height: 100%;
     width: 100%;
     display: flex;

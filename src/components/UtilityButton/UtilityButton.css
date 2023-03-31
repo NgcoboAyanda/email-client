@@ -47,3 +47,7 @@
     height: 98%;
     width: 98%;
 } 
+
+.utility-btn_size-small > div > div > svg {
+    height: 16px;
+}

@@ -28,7 +28,7 @@ const MailSidebar = () => {
                         />
                     </div>
                 </div>
-                <div className="sidebar_mail__msg-btn">
+                <div className="sidebar__msg-btn">
                     <div>
                         <Button
                             text="New message"
@@ -37,10 +37,12 @@ const MailSidebar = () => {
                         />
                     </div>
                 </div>
-                <SystemFolders/>
-                <MoreFolders/>
-                <CustomFolders/>
-                <LabelFolders/>
+                <div className="sidebar__folders">
+                    <SystemFolders/>
+                    <MoreFolders/>
+                    <CustomFolders/>
+                    <LabelFolders/>
+                </div>
             </div>
         </section>
     )

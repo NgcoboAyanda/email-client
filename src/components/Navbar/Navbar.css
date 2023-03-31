@@ -63,7 +63,7 @@ a.nav-btn{
     .nav__sidebar{
         display: flex;
         height: 100%;
-        flex: 0 0 250px;
+        flex: 0 0 var(--mail-sidebar-width);
         padding: 0 var(--space-small);
     }
 

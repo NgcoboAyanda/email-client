@@ -7,6 +7,8 @@
   box-sizing: border-box;
   outline: none;
   font-family: var(--ff-default);
+  scrollbar-color: var(--scrollbar-thumb-color) transparent;
+  scrollbar-width: thin;
 }
 
 :root{
@@ -28,6 +30,7 @@
   /* fonts */
   --fc-lighter: rgb(246, 246, 246);
   --fc-light: rgb(235, 235, 235);
+  --fc-mid: rgb(44, 44, 44);
 
   --ff-default: 'Inter', sans-serif;
 
@@ -35,25 +38,28 @@
   --fs-normal: 14px;
   --fs-mid: 16px;
   --fs-big: 18px;
+  --fs-bigger: 20px;
 
   --fw-small: 300;
   --fw-normal: 400;
   --fw-mid: 500;
   --fw-big: 600;
-  --fw-bigger:800;
+  --fw-bigger:700;
 
   /* paddings, magin */
   --space-small: 8px;
   --space-mid: 16px;
   --space-big: 24px;
   --space-extreme: 32px;
+
+  /* border */
+  --border-light: 1px solid rgb(220, 220, 220);
+
+  /* sidebar */
+  --mail-sidebar-width: 250px;
 }
 
-html {
-  height: 100%;
-}
-
-body {
+html, body {
   height: 100%;
 }
 
@@ -138,6 +144,11 @@ body {
 
 .ui-icon_rotated90{
   transform: rotate(-90deg);
+}
+
+.divider{
+  width: 1px;
+  background-color: var(--color-border-light);
 }
 
 /* break points are 680px, 950px*/

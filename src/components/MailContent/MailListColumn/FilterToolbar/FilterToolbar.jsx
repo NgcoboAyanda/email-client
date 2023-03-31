@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import FilterBtn from "../../../FilterBtn/FilterBtn";
 import SortBtn from "../../../SortBtn/SortBtn";
 import UtilityButton from "../../../UtilityButton/UtilityButton";
@@ -6,6 +6,7 @@ import UtilityButton from "../../../UtilityButton/UtilityButton";
 import './FilterToolbar.css';
 
 const FilterToolbar = ({ className='' }) => {
+    const [currentFilterValue, setCurrentFilterValue] = useState('All');
 
     return (
         <div className={`filter-toolbar ${className}`}>

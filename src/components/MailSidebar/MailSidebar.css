@@ -1,65 +1,62 @@
-.sidebar{
+/* Mobile version */
+.sidebar {
     position: absolute;
-    left: 0;
-    top: 0;
+    top: -70px;
     width: 100%;
+    height: 100%;
     background-color: var(--color-primary-dark);
-    padding: 0 var(--space-small);
+    overflow-y: scroll;
 }
 
-/* on smaller screens- the sidebar is only visible if the class is sidebar_open */
 .sidebar_open{
-    display: block;
-}
-
-.sidebar_closed{
-    display: none;
-}
-
-.sidebar > div {
     display: flex;
     flex-direction: column;
 }
 
-.sidebar__header{
-    display: flex;
-    height: 70px;
-    align-items: center;
-    margin-bottom: var(--space-small);
+.sidebar_closed{
+    display: none;
 }
 
-.sidebar__header > div{
-    width: 100%;
+.sidebar__header > div {
     display: flex;
     justify-content: space-between;
 }
 
-.sidebar_mail__msg-btn{
+.sidebar__msg-btn{
     display: none;
-    margin-bottom: var(--space-small);
 }
 
+.sidebar__folders{
+    margin-top: var(--space-big);
+}
+
+/* Desktop version */
 @media screen and (min-width: 680px){
-section.sidebar{
-    position: unset;
-    width: 250px;
-}
+    .sidebar{
+        position: absolute;
+        top: 0;
+        width: var(--mail-sidebar-width);
+        height: 100%;
+        overflow-y: scroll;
+        display: flex !important;
+        flex-direction: column;
+        padding-bottom: var(--space-mid);
+    }
+    
+    .sidebar > div {
+        height: auto;
+    }
+    
+    .sidebar__header{
+        display: none;
+    }
+    
+    .sidebar__msg-btn{
+        display: block;
+    }
 
-/* on bigger screens- the sidebar has to always be visible */
-.sidebar_open{
-    display: block;
-}
-
-.sidebar_closed{
-    display: block;
-}
-
-.sidebar__header{
-    display: none;
-    margin-bottom: 0;
-}
-
-.sidebar_mail__msg-btn{
-    display: block;
-}
+    .sidebar > div > .shit{
+        border: 1px solid white;
+        height: 200px;
+    }
 }

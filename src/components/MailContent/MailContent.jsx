@@ -20,16 +20,16 @@ const MailContent = () => {
     )
 
     return (
-        <section className="app__mail__content">
+        <section className="app__mail__main__content">
             <div>
                 <Toolbar/>
-                <div className="app__mail__content__column">
+                <div className="app__mail__main__content__column">
                     <div>
                         <MailListColumn
-                            className="app__mail__content__column__list"
+                            className="app__mail__main__content__column__list"
                         />
                         <MailContentColumn
-                            className="app__mail__content__column__content"
+                            className="app__mail__main__content__column__content"
                         />
                     </div>
                 </div>

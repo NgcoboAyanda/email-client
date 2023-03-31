@@ -6,6 +6,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 .app__mail__main {
@@ -14,15 +15,17 @@
 }
 
 .app__mail__main > div {
+    border: 1px solid purple;
+    width: 100%;
     height: 100%;
+    border: 5px solid green;
     display: flex;
+    position: relative;
 }
 
-.app__mail__main > div > * {
-    height: 100%;
-}
-
-.app__mail__content{
+.app__mail__main__content{
+    margin-left: var(--mail-sidebar-width);
+    display: none;
     flex: 1;
     border-radius: 8px;
     background-color: var(--main-content-bg);

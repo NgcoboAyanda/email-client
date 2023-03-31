@@ -24,7 +24,7 @@ const MailContentColumn = ({className}) => {
                                 Welcome {userFirstName}
                             </span>
                             <span className="unread">
-                                You have <b>{numberOfUnreadEmails} unread conversation{numberOfUnreadEmails>1?'s':''}</b> in your {currentOpenFolder}. 
+                                You have <b>{numberOfUnreadEmails} unread conversation{numberOfUnreadEmails>1?'s':''}</b> in {currentOpenFolder==='allMail'?'all mail': `your ${currentOpenFolder}`}. 
                             </span>
                         </div>
 
