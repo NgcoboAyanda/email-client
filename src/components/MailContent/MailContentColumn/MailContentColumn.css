@@ -3,8 +3,19 @@
     overflow-y: scroll;
 }
 
+.mail-content-column > div {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
 .mail-content-column__welcome{
     text-align: center;
+    position: relative;
+}
+
+.mail-content-column__welcome > div {
+    position: absolute;
 }
 
 .mail-content-column__welcome__text{

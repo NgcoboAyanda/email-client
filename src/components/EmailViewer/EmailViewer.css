@@ -1,13 +1,16 @@
 .email-viewer{
-    overflow-y: hidden;
+    position: relative;
 }
 
 .email-viewer > div {
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: auto;
     padding: var(--space-big) var(--space-small);
 }
 
 .email-viewer__subject{
-    background-color: red;
     width: 80%;
     overflow-x: hidden;
     font-size: var(--fs-bigger);

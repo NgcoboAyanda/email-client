@@ -1,13 +1,15 @@
 /* Mobile version */
 .sidebar {
-    position: absolute;
-    top: -70px;
     width: 100%;
     height: 100%;
     background-color: var(--color-primary-dark);
     overflow-y: scroll;
 }
 
+.sidebar > div {
+    width: 100%;
+    height: 100%;
+}
 .sidebar_open{
     display: flex;
     flex-direction: column;
@@ -33,18 +35,20 @@
 /* Desktop version */
 @media screen and (min-width: 680px){
     .sidebar{
-        position: absolute;
-        top: 0;
+        position: relative;
         width: var(--mail-sidebar-width);
         height: 100%;
-        overflow-y: scroll;
         display: flex !important;
         flex-direction: column;
-        padding-bottom: var(--space-mid);
+        overflow-y: scroll;
     }
     
     .sidebar > div {
+        position: absolute !important;
         height: auto;
+        width: 100%;
+        overflow-y: hidden;
+        padding-bottom: var(--space-mid);
     }
     
     .sidebar__header{

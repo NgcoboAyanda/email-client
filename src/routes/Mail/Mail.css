@@ -20,13 +20,5 @@
     height: 100%;
     border: 5px solid green;
     display: flex;
-    position: relative;
 }
 
-.app__mail__main__content{
-    margin-left: var(--mail-sidebar-width);
-    display: none;
-    flex: 1;
-    border-radius: 8px;
-    background-color: var(--main-content-bg);
-}
