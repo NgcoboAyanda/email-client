@@ -1,7 +1,8 @@
 .mail-content{
-    flex: 5;
+    flex: 6;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
+    border-left: var(--border-light);
 }
 
 .mail-content > div {

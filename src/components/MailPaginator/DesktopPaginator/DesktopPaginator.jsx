@@ -3,9 +3,7 @@ import UtilityButton from "../../UtilityButton/UtilityButton";
 
 import './DesktopPaginator.css';
 
-const DesktopPaginator = ({className}) => {
-    const currentPage = 1;
-    const lastPage = 52;
+const DesktopPaginator = ({className, currentPageNumber, lastPageNumber}) => {
 
     return (
         <div className={`${className} desktop-paginator`}>
@@ -25,13 +23,13 @@ const DesktopPaginator = ({className}) => {
                 <div className="desktop-paginator__count">
                     <div>
                         <span className="desktop-paginator__count__current-page">
-                            {currentPage}
+                            {currentPageNumber}
                         </span>
                         <span className="desktop-paginator__count__divider">
                             of
                         </span>
                         <span className="desktop-paginator__count__last-page">
-                            {lastPage}
+                            {lastPageNumber}
                         </span>
                     </div>
                 </div>

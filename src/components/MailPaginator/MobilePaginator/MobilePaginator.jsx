@@ -2,9 +2,7 @@ import React from 'react';
 
 import './MobilePaginator.css';
 
-const MobilePaginator = ({className}) => {
-    const currentPageNumber = 1
-
+const MobilePaginator = ({className, currentPageNumber}) => {
 
     return (
         <div className={`${className} mobile-paginator`}>
