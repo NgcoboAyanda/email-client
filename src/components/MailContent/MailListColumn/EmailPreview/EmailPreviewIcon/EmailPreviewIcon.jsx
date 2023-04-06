@@ -2,7 +2,7 @@ import React from "react";
 
 import './EmailPreviewIcon.css';
 
-const EmailPreviewIcon = ({sender, selected, onClick=null}) => {
+const EmailPreviewIcon = ({sender, selected, onClick=null, numberOfSelectedEmails, clearAllSelectedEmails}) => {
     //if the current email is selected we wanna show a checkmark inside the box
 
     const renderCheckmark = () => {
@@ -21,8 +21,10 @@ const EmailPreviewIcon = ({sender, selected, onClick=null}) => {
     }
 
     return (
-        <div className={`email-preview__icon email-preview__icon_${selected?'checked':'empty'}`} onClick={()=>{
+        <div className={`email-preview__icon email-preview__icon_${selected?'checked':'empty'}`} onClick={e=>{
+            e.stopPropagation();
             if(onClick){
+                //if the passed onClick function is not undefined
                 onClick();
             }
         }} >

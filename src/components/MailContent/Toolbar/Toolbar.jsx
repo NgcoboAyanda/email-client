@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleAllEmailSelected } from '../../../features/mail/mail';
+import { ClearEmailViewer, toggleAllEmailSelected } from '../../../features/mail/mail';
 import Checkbox from '../../Checkbox/Checkbox';
 import MailPaginator from '../../MailPaginator/MailPaginator';
 import UtilityButton from '../../UtilityButton/UtilityButton';
@@ -16,7 +16,8 @@ const Toolbar = () => {
     const dispatch = useDispatch();
 
     const dispatchToggleAllEmailSelected = () => {
-        dispatch( toggleAllEmailSelected({folder: currentOpenFolder}) )
+        dispatch( ClearEmailViewer() );//clear email viewer
+        dispatch( toggleAllEmailSelected({folder: currentOpenFolder}) );
     }
 
     return (

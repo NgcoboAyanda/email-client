@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleSingleEmailSelected, ViewEmail } from "../../../../features/mail/mail";
+import { ClearEmailViewer, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail } from "../../../../features/mail/mail";
 
 import './EmailPreview.css';
 import EmailPreviewIcon from "./EmailPreviewIcon/EmailPreviewIcon";
@@ -8,6 +8,7 @@ import EmailPreviewIcon from "./EmailPreviewIcon/EmailPreviewIcon";
 const EmailPreview = ({id='', email}) => {
     const {sender, time, subject, read, selected, id: emailId} = email;
     const {currentOpenFolder} = useSelector(state => state.mail)
+    const {selected: numberOfSelectedEmails} = useSelector(state => state.mail.folders[currentOpenFolder])
     const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer)
 
     const dispatch = useDispatch();
@@ -30,7 +31,9 @@ const EmailPreview = ({id='', email}) => {
             id: emailId,
             folder: currentOpenFolder,
             previousState: selected
-        }) )
+        }) );
+        //
+        dispatch(ClearEmailViewer());
     }
 
     const renderEmailPreviewIcon = () => {
@@ -45,8 +48,17 @@ const EmailPreview = ({id='', email}) => {
         }
     }
 
+    const clickEmailPreview = () => {
+        //open current email
+        dispatch(ViewEmail({ email }));
+        //
+        if (numberOfSelectedEmails > 0) {
+            dispatch(toggleAllEmailSelected({folder: currentOpenFolder, toggleValue: false}));
+        }
+    }
+
     return (
-        <div className={`email-preview email-preview_${read?'read':'unread'} ${currentlyOpenEmail &&currentlyOpenEmail.id === emailId ? 'email-preview_current': ''}`} id={id} onClick={()=>dispatch(ViewEmail({ email }))}>
+        <div className={`email-preview email-preview_${read?'read':'unread'} ${currentlyOpenEmail &&currentlyOpenEmail.id === emailId ? 'email-preview_current': ''}`} id={id} onClick={e=> clickEmailPreview()}>
             <div>
                 <div className="email-preview__bullet">
                     {renderEmailPreviewBullet()}

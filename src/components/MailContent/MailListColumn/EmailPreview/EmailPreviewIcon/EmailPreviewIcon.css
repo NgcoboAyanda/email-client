@@ -1,6 +1,3 @@
-.email-preview__icon{
-    pointer-events: none;
-}
 
 .email-preview__icon_empty{
     display: flex;

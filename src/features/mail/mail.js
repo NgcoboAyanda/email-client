@@ -125,7 +125,10 @@ const mailSlice = createSlice({
         },
         toggleAllEmailSelected: (state, action) => {
             //toggle if all emails are selected or deselected
-            const {folder} = action.payload;
+            const {folder, toggleValue=null} = action.payload;
+            console.log(toggleValue)
+            //if toggleValue is false, all emails will be unselected,
+            //if toggleValue is true all emails will be selected
             const {emails, totalNumber, read, unread, selected} = state.folders[folder];
             //function that loops through emails array and sets selected to a particular value
             const toggle = (folder, newValue) => {
@@ -133,13 +136,19 @@ const mailSlice = createSlice({
                     email.selected = newValue;
                 } )
             }
-            if(totalNumber !== selected){
-                //not every email is selected
-                toggle(folder, true); //select every email
+            if(toggleValue !== null){
+                toggle(folder, toggleValue);
             }
-            else{
-                //every email is selected
-                toggle(folder, false);//deselect every email
+            else if(toggleValue === null){
+                //if toggle value is not passed in
+                if(totalNumber !== selected){
+                    //not every email is selected
+                    toggle(folder, true); //select every email
+                }
+                else{
+                    //every email is selected
+                    toggle(folder, false);//deselect every email
+                };
             };
         },
         toggleSingleEmailSelected: (state, action) =>{
