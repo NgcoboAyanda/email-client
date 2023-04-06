@@ -1,14 +1,24 @@
-.mail-list-column__emails{
+.mail-list {
+    flex: 3;
+}
+
+.mail-list > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mail-list__emails{
     flex: 1;
-    background-color: red;
+    height: 100%;
     position: relative;
     overflow-y: scroll;
 }
 
-.mail-list-column__emails > div {
+.mail-list__emails > div {
+    position: absolute;
     left: 0;
     height: auto;
     width: 100%;
-    position: absolute;
     overflow-y: auto;
 }

@@ -40,10 +40,10 @@ const MailListColumn = ({className}) => {
     }
 
     return (
-        <section className={`mail-list-column ${className}`}>
+        <section className="mail-list">
             <div>
                 <FilterToolbar/>
-                <div className="mail-list-column__emails">
+                <div className="mail-list__emails">
                     <div>
                         {renderEmailsInFolder()}
                     </div>

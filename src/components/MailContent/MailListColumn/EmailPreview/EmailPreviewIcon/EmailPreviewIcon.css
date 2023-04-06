@@ -1,3 +1,7 @@
+.email-preview__icon{
+    pointer-events: none;
+}
+
 .email-preview__icon_empty{
     display: flex;
     background-color: #e5e4e1;

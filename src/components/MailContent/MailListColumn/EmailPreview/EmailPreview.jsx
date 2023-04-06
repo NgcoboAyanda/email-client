@@ -8,6 +8,7 @@ import EmailPreviewIcon from "./EmailPreviewIcon/EmailPreviewIcon";
 const EmailPreview = ({id='', email}) => {
     const {sender, time, subject, read, selected, id: emailId} = email;
     const {currentOpenFolder} = useSelector(state => state.mail)
+    const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer)
 
     const dispatch = useDispatch();
 
@@ -45,7 +46,7 @@ const EmailPreview = ({id='', email}) => {
     }
 
     return (
-        <div className={`email-preview email-preview_${read?'read':'unread'}`} id={id} onClick={()=>dispatch(ViewEmail({ email }))}>
+        <div className={`email-preview email-preview_${read?'read':'unread'} ${currentlyOpenEmail &&currentlyOpenEmail.id === emailId ? 'email-preview_current': ''}`} id={id} onClick={()=>dispatch(ViewEmail({ email }))}>
             <div>
                 <div className="email-preview__bullet">
                     {renderEmailPreviewBullet()}

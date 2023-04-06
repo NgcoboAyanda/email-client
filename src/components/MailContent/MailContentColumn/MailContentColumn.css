@@ -1,39 +1,44 @@
-.mail-content-column{
+.mail-content{
+    flex: 5;
     height: 100%;
     overflow-y: scroll;
 }
 
-.mail-content-column > div {
+.mail-content > div {
     height: 100%;
     width: 100%;
     display: block;
 }
 
-.mail-content-column__welcome{
+.mail-content__welcome{
+    height: 100%;
     text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.mail-content-column__welcome > div {
+.mail-content__welcome > div {
     position: absolute;
 }
 
-.mail-content-column__welcome__text{
+.mail-content__welcome__text{
     display: flex;
     flex-direction: column;
 }
 
-.mail-content-column__welcome__text > .name{
+.mail-content__welcome__text > .name{
     font-size: 36px;
 }
 
-.mail-content-column__welcome__text > .unread {
+.mail-content__welcome__text > .unread {
     font-size: var(--fs-normal);
     margin-top: var(--space-big);
     padding-bottom: var(--space-extreme);
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
-.mail-content-column__welcome__icon{
+.mail-content__welcome__icon{
     margin-top: var(--space-extreme);
 }

@@ -22,6 +22,11 @@
     margin-top: 5px;
 }
 
+.email-preview_current{
+    background-color: var(--color-primary) !important;
+    color: var(--fc-light) !important;
+}
+
 .email-preview_read{
     background-color: #f8f8f6;
 }
