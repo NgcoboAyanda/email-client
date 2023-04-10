@@ -2,6 +2,7 @@
     flex: 1;
     border-radius: 8px;
     background-color: var(--main-content-bg);
+    overflow-x: scroll;
 }
 
 .app__mail__main__content > div {
@@ -43,4 +44,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media all and (min-width: 680px) {
+    .app__mail__main__content__column > div {
+        display: flex;
+        height: 100%;
+        width: 100%; /* making the width 2x large on mobile */
+    }
+    
+    .app__mail__main__content__column__list{
+        flex: 3;
+        border-right: 1px solid rgb(231, 231, 231);
+        background-color: white;
+    }
+    
+    .app__mail__main__content__column__list > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .app__mail__main__content__column__content{
+        padding: 0 var(--space-mid);
+        flex: 5;
+        background-color: white;
+    }
+    
+    .app__mail__main__content__column__content > div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -9,6 +9,7 @@ import Toolbar from "./Toolbar/Toolbar";
 
 const MailContent = () => {
     const {currentOpenFolder} = useSelector(state => state.mail);
+    const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer)
 
     const dispatch = useDispatch();
 
@@ -22,14 +23,16 @@ const MailContent = () => {
     return (
         <section className="app__mail__main__content">
             <div>
-                <Toolbar/>
+                <Toolbar
+                    className={currentlyOpenEmail?'hidden_mobile':''}
+                />
                 <div className="app__mail__main__content__column">
                     <div>
                         <MailListColumn
-                            className="app__mail__main__content__column__list"
+                            className={`app__mail__main__content__column__list`}
                         />
                         <MailContentColumn
-                            className="app__mail__main__content__column__content"
+                            className={`app__mail__main__content__column__content`}
                         />
                     </div>
                 </div>

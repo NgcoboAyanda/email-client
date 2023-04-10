@@ -7,10 +7,11 @@ import UtilityButton from '../../UtilityButton/UtilityButton';
 
 import './Toolbar.css';
 
-const Toolbar = () => {
+const Toolbar = ({className=''}) => {
     const {currentOpenFolder} = useSelector(state => state.mail)
     const [selectCheckboxChecked, setSelectCheckboxChecked] = useState(false);
     const {totalNumber: totalNumberOfEmails, selected: numberOfSelectedEmails} = useSelector(state => state.mail.folders[currentOpenFolder]);
+    const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer)
     
 
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Toolbar = () => {
     }
 
     return (
-        <div id="mail-toolbar" className="mail-toolbar">
+        <div id="mail-toolbar" className={`mail-toolbar ${className}`}>
             <div>
                 <Checkbox
                     checked={totalNumberOfEmails != 0 &&totalNumberOfEmails===numberOfSelectedEmails?true:false}

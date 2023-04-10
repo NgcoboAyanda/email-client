@@ -45,7 +45,7 @@ const MailContentColumn = ({className}) => {
     }
 
     return (
-        <section className="mail-content">
+        <section className={`mail-content ${currentlyOpenEmail?'':'hidden_mobile'}`}>
             <div>
                 {renderEmailViewer()}
             </div>

@@ -33,6 +33,10 @@
 }
 
 @media all and (min-width: 950px) {
+    #mail-toolbar{
+        display: flex !important;
+    }
+
     .mail-toolbar__item_desktop {
         display: block;
     }

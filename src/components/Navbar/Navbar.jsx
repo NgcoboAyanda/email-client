@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './Navbar.css'; //style
 
@@ -17,11 +17,13 @@ import { toggleMobileSidebar } from '../../features/mail/mail';
 
 const Navbar = () => {
     const [inputSearchValue, setInputSearchValue] = useState('');
+    const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer);
 
     const dispatch = useDispatch();
 
     return (
-        <nav className="nav">
+        /* If the EmailViewer is open on Mobile we want to hide the nav bar */
+        <nav className={`nav ${currentlyOpenEmail?'hidden_mobile':''}`}>
             <div>
                 <div className="nav__sidebar">
                     <div>

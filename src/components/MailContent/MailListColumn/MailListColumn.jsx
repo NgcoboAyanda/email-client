@@ -13,6 +13,7 @@ const MailListColumn = ({className}) => {
     const {currentOpenFolder} = useSelector(state => state.mail);
     const {folders} = useSelector(state=>state.mail)
     const {emails} = useSelector(state => state.mail.folders[currentOpenFolder])
+    const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer)
 
     const dispatch = useDispatch()
 
@@ -40,9 +41,11 @@ const MailListColumn = ({className}) => {
     }
 
     return (
-        <section className="mail-list">
+        <section className={`mail-list ${currentlyOpenEmail?'hidden_mobile':''}`}>
             <div>
-                <FilterToolbar/>
+                {/* If the EmailViewer is open on Mobile, we want to hide the toolbar  */}
+                <FilterToolbar
+                />
                 <div className="mail-list__emails">
                     <div>
                         {renderEmailsInFolder()}

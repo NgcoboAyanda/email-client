@@ -1,5 +1,5 @@
 .mail-content{
-    flex: 6;
+    flex: 1;
     height: 100%;
     overflow-y: auto;
     border-left: var(--border-light);
@@ -42,4 +42,11 @@
 
 .mail-content__welcome__icon{
     margin-top: var(--space-extreme);
+}
+
+@media all and (min-width: 680px) {    
+    .mail-content{
+        flex: 6;
+    }
+    
 }

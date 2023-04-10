@@ -1,11 +1,12 @@
 .mail-list {
-    flex: 4;
+    flex: 1;
 }
 
 .mail-list > div {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
 }
 
 .mail-list__emails{
@@ -21,4 +22,10 @@
     height: auto;
     width: 100%;
     overflow-y: auto;
+}
+
+@media all and (min-width: 680px) {
+    .mail-list {
+        flex: 4;
+    }
 }

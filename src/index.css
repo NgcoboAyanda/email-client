@@ -67,6 +67,11 @@ html, body {
   height: 100%;
 }
 
+.hidden_mobile {
+  display: none !important;
+}
+
+
 /* inputs and buttons */
 
 .input{
@@ -152,3 +157,8 @@ html, body {
 }
 
 /* break points are 680px, 950px*/
+@media all and (min-width: 680px) {
+    .hidden_mobile {
+      display: flex !important;
+    }
+}
