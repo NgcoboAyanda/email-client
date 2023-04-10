@@ -33,6 +33,11 @@ const EmailViewer = ({email=null}) => {
     return (
         <div className="email-viewer">
             <div>
+                <div className="email-viewer__header">
+                    <div>
+                        
+                    </div>
+                </div>
                 <div className="email-viewer__subject">
                     {subject}
                 </div>
