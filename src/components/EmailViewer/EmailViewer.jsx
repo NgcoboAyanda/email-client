@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Icon from "../Icon/Icon";
 import UtilityButton from "../UtilityButton/UtilityButton";
@@ -10,11 +10,22 @@ import { ClearEmailViewer } from "../../features/mail/mail";
 
 const EmailViewer = ({email=null}) => {
 
-    const {sender, time, subject, content, isFromMailingList=false} = email;
+    const {sender, id, time, subject, content, isFromMailingList=false} = email;
 
     const currentUserEmail = "johndoe@doemail.com";
 
     const dispatch = useDispatch();
+
+    useEffect(
+        () => {
+
+        },
+        []
+    )
+
+    const markEmailAsRead = () => {
+        dispatch(  )
+    }
 
     const renderMailingListMsg = () => {
         if(!isFromMailingList){
