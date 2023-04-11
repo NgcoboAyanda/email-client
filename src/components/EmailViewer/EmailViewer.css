@@ -23,6 +23,14 @@
     background-color: var(--color-primary-dark);
 }
 
+.email-viewer__header > div {
+    padding: 0 var(--space-mid);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .email-viewer__subject{
     margin-top: 70px;
     padding-top: var(--space-extreme);

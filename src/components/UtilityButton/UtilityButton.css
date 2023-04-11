@@ -43,11 +43,18 @@
 }
 
 .utility-btn__icon > svg {
-    fill: rgb(51, 51, 51);
     height: 98%;
     width: 98%;
 } 
 
 .utility-btn_size-small > div > div > svg {
     height: 16px;
+}
+
+.utility-btn_color-light{
+    fill: var(--fc-light);
+}
+
+.utility-btn_color-mid{
+    fill: rgb(51, 51, 51);
 }

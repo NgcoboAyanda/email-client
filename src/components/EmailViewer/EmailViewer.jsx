@@ -1,14 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import Icon from "../Icon/Icon";
 import UtilityButton from "../UtilityButton/UtilityButton";
 
 import './EmailViewer.css';
+import UserBtn from "./UserBtn/UserBtn";
+import { ClearEmailViewer } from "../../features/mail/mail";
+
 
 const EmailViewer = ({email=null}) => {
 
     const {sender, time, subject, content, isFromMailingList=false} = email;
 
     const currentUserEmail = "johndoe@doemail.com";
+
+    const dispatch = useDispatch();
 
     const renderMailingListMsg = () => {
         if(!isFromMailingList){
@@ -30,12 +36,26 @@ const EmailViewer = ({email=null}) => {
         }
     }
 
+    const clickGoBackBtn = () => {
+        dispatch( ClearEmailViewer() );
+    }
+
     return (
         <div className="email-viewer">
             <div>
                 <div className="email-viewer__header">
                     <div>
-                        
+                        <UtilityButton
+                            label="Go back"
+                            icon={<svg viewBox="0 0 16 16" class="icon-16p topnav-icon mr0-5" role="img" focusable="false" aria-hidden="true">
+                                <g id="ic-arrow-left">
+                                <path d="m2.637 8 3.71-3.643a.5.5 0 1 0-.7-.714L1.208 8.001a.7.7 0 0 0 0 .998l4.437 4.357a.5.5 0 0 0 .701-.713L2.637 9h11.86a.5.5 0 1 0 0-1H2.637Z"></path>
+                                </g>
+                            </svg>}
+                            color="light"
+                            onClick={clickGoBackBtn}
+                        />
+                        <UserBtn/>
                     </div>
                 </div>
                 <div className="email-viewer__subject">
