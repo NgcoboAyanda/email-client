@@ -126,7 +126,6 @@ const mailSlice = createSlice({
         toggleAllEmailSelected: (state, action) => {
             //toggle if all emails are selected or deselected
             const {folder, toggleValue=null} = action.payload;
-            console.log(toggleValue)
             //if toggleValue is false, all emails will be unselected,
             //if toggleValue is true all emails will be selected
             const {emails, totalNumber, read, unread, selected} = state.folders[folder];
