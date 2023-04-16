@@ -10,7 +10,7 @@ import { ClearEmailViewer } from "../../features/mail/mail";
 
 const EmailViewer = ({email=null}) => {
 
-    const {sender, id, time, subject, content, isFromMailingList=false} = email;
+    const {sender, time, subject, content, isFromMailingList=false} = email;
 
     const currentUserEmail = "johndoe@doemail.com";
 
@@ -22,10 +22,6 @@ const EmailViewer = ({email=null}) => {
         },
         []
     )
-
-    const markEmailAsRead = () => {
-        dispatch(  )
-    }
 
     const renderMailingListMsg = () => {
         if(!isFromMailingList){

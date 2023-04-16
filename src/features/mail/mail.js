@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     folders: {
@@ -128,7 +128,7 @@ const mailSlice = createSlice({
             const {folder, toggleValue=null} = action.payload;
             //if toggleValue is false, all emails will be unselected,
             //if toggleValue is true all emails will be selected
-            const {emails, totalNumber, read, unread, selected} = state.folders[folder];
+            const { totalNumber, selected} = state.folders[folder];
             //function that loops through emails array and sets selected to a particular value
             const toggle = (folder, newValue) => {
                 state.folders[folder].emails.forEach( email => {
