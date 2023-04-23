@@ -23,10 +23,12 @@ const Navbar = () => {
     const dispatch = useDispatch();
 
     const capitalize = s => {
-        if(s === 'allMail'){
-            return "All Mail"
+        if(s){
+            if(s === 'allMail'){
+                return "All Mail"
+            }
+            else return s && s[0].toUpperCase() + s.slice(1);
         }
-        else return s && s[0].toUpperCase() + s.slice(1);
     }
 
     return (
