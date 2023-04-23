@@ -1,6 +1,6 @@
 .app__mail__main__content{
     flex: 1;
-    border-radius: 8px;
+    border-radius: 0;
     background-color: var(--main-content-bg);
     overflow-x: scroll;
 }
@@ -47,6 +47,10 @@
 }
 
 @media all and (min-width: 680px) {
+    .app__mail__main__content{
+        border-radius: 8px;
+    }
+
     .app__mail__main__content__column > div {
         display: flex;
         height: 100%;

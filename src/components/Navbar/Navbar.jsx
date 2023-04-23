@@ -17,9 +17,17 @@ import { toggleMobileSidebar } from '../../features/mail/mail';
 
 const Navbar = () => {
     const [inputSearchValue, setInputSearchValue] = useState('');
+    const {currentOpenFolder} = useSelector(state => state.mail);  
     const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer);
 
     const dispatch = useDispatch();
+
+    const capitalize = s => {
+        if(s === 'allMail'){
+            return "All Mail"
+        }
+        else return s && s[0].toUpperCase() + s.slice(1);
+    }
 
     return (
         /* If the EmailViewer is open on Mobile we want to hide the nav bar */
@@ -55,7 +63,7 @@ const Navbar = () => {
                         <div className="nav__links__item nav__links__label">
                             <div>
                                 <div className="nav__links__label__text">
-                                    Inbox
+                                    {capitalize(currentOpenFolder)}
                                 </div>
                             </div>
                         </div>

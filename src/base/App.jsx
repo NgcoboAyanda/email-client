@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 import './App.css';
 
@@ -12,7 +12,7 @@ const App = () => {
             <div>
                 <Router>
                     <Routes>
-                        <Route exact path="/mail" element={<Mail/>} />
+                        <Route exact path="/" element={<Mail/>} />
                     </Routes>
                 </Router>
             </div>
