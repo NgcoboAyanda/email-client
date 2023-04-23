@@ -11,7 +11,7 @@ const MailContentColumn = ({className}) => {
     const {unread: numberOfUnreadEmails} = useSelector(state => state.mail.folders[currentOpenFolder]);
     const {currentlyOpenEmail} = useSelector(state => state.mail.emailViewer);
 
-    const userFirstName = "Ayanda";
+    const {firstName: userFirstName, lastName: userLastName} = useSelector(state => state.user);
 
     const renderEmailViewer = () => {
         if(!currentlyOpenEmail){
@@ -21,7 +21,7 @@ const MailContentColumn = ({className}) => {
                     <div>
                         <div className="mail-content__welcome__text">
                             <span className="name">
-                                Welcome {userFirstName}
+                                Welcome {userFirstName} {userLastName}
                             </span>
                             <span className="unread">
                                 You have <b>{numberOfUnreadEmails} unread conversation{numberOfUnreadEmails>1?'s':''}</b> in {currentOpenFolder==='allMail'?'all mail': `your ${currentOpenFolder}`}. 
