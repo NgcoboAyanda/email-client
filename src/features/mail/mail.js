@@ -177,14 +177,135 @@ const initialState = {
             selected: 0
         },
         archive: {
-            emails:[],
+            emails:[
+                {
+                    sender: {
+                        name: 'eBay',
+                        email: 'support@ebay.com',
+                        logo: ""
+                    },  
+                    id: 12,
+                    time: '08:16',
+                    subject: "Was R2500 now R2000- check it out",
+                    content: "Because you viewed this item, you've been given a special offer. You've been offered a 25% discount.",
+                    read: false,
+                    selected: false
+                }
+                ,
+                {
+                    sender: {
+                        name: 'Github',
+                        email: 'support@github.com',
+                        logo: ""
+                    },
+                    id: 13,
+                    time: '08:35',
+                    subject: "[JohnDoe/project] Github Pages Now Active",
+                    content: "Github pages for project is now live. You can view your project at https://localhost:8000.",
+                    read: false,
+                    selected: false
+                }
+                ,
+                {
+                    sender: {
+                        name: 'Imgur',
+                        email: 'support@imgur.com',
+                        logo: ""
+                    },
+                    id: 14,
+                    time: '08:35',
+                    subject: "Updates to Imgur's Terms of Service",
+                    content: "We wanted to reach out to let you know that we are updating our terms and conditions.",
+                    read: false,
+                    selected: false
+                },
+                {
+                    sender: {
+                        name: 'Bolt South Africa',
+                        email: 'bheki@bolt.co.za',
+                        logo: ""
+                    },
+                    id: 15,
+                    time: '08:48',
+                    subject: "[16] Your Bolt trip on Friday",
+                    content: "Thanks for riding with us John Doe. Your ride was R30.00.",
+                    read: false,
+                    selected: false
+                },
+                {
+                    sender: {
+                        name: 'Samsung Cloud',
+                        email: 'cloud@samsung.com',
+                        logo: ""
+                    },
+                    id: 16,
+                    time: '08:55',
+                    subject: "Notice of Music/Documents feature deletion",
+                    content: "Good day Samsung Cloud user. We wanted to inform you about the termination of the music/documents feature on Samsung Cloud.",
+                    read: false,
+                    selected: false
+                },
+                {
+                    sender: {
+                        name: 'Vans',
+                        email: 'newsletter@vans.co.za',
+                        logo: ""
+                    },
+                    id: 17,
+                    time: '09:01',
+                    subject: "Tough on the inside like Breana Geering",
+                    content: "To be a skateboarder you’ve got to be tough. You’ve got to work hard, get up when you fall, and never give up. This is the stuff Vans Skate Classics are made of. Because they’re made for skateboarders. Shop the new Breana Geering Collection.",
+                    read: false,
+                    selected: false
+                }, 
+            ],
             totalNumber: 0,
             read: 0,
             unread: 0,
             selected: 0
         },
         spam: {
-            emails:[],
+            emails:[
+                {
+                    sender: {
+                        name: 'LinkedIn',
+                        email: 'no-reply@linkedin.com',
+                        logo: ""
+                    },
+                    id: 18,
+                    time: '09:20',
+                    subject: "People in South Africa follow these creators",
+                    content: "Good day Mr. John Doe. Please login to your LinkedIn account to see the creators most South Africans are following.",
+                    read: false,
+                    selected: false
+                },
+                {
+                    sender: {
+                        name: 'LinkedIn',
+                        email: 'no-reply@linkedin.com',
+                        logo: ""
+                    },
+                    id: 19,
+                    time: '09:22',
+                    subject: "You appeared in 8 searches this week",
+                    content: "Good day Mr. John Doe. You appeared in 8 searches this week.",
+                    read: false,
+                    selected: false
+                },
+                {
+                    sender: {
+                        name: 'LinkedIn',
+                        email: 'no-reply@linked.com',
+                        logo: ""
+                    },
+                    id: 20,
+                    time: '09:33',
+                    subject: "John Doe, you're getting noticed",
+                    content: "Mr. John Doe your profile is looking great and your accomplishments are being recognized.",
+                    read: false,
+                    selected: false
+                }, 
+            ],
             totalNumber: 0,
             read: 0,
             unread: 0,
