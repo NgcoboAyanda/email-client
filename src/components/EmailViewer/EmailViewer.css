@@ -32,7 +32,7 @@
 }
 
 .email-viewer__subject{
-    text-align: center;
+    text-align: left;
     width: 100%;
     margin-top: 70px;
     padding-top: var(--space-extreme);
