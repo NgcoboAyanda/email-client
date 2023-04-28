@@ -133,7 +133,7 @@ const Toolbar = ({className=''}) => {
                 />
                 <UtilityButton
                     label="More Selections"
-                    className="mail-toolbar__item"
+                    className={`mail-toolbar__item ${numberOfSelectedEmails===0?'mail-toolbar__item_margin-right-auto':''}`}
                     id="more-selections-btn"
                     icon={
                         <svg viewBox="0 0 16 16"role="img" focusable="false" aria-hidden="true">

@@ -45,6 +45,10 @@
         margin-right: 0;
     }
 
+    .mail-toolbar__item_margin-right-auto{
+        margin-right: auto !important;
+    }
+
     .mail-toolbar__item_desktop {
         display: block;
     }
