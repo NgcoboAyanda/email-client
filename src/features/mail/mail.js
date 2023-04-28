@@ -671,6 +671,14 @@ const mailSlice = createSlice({
         ClearEmailViewer: (state, action) => {
             return {...state, emailViewer: {...state.emailViewer, currentlyOpenEmail: null}};
         },
+        markAsRead: (state, action) => {
+            const { emailid } = action.payload;
+            state.folders[state.currentOpenFolder].emails.forEach(email => {
+                if(email.id === emailid){
+                    email.read = true;
+                }
+            })
+        },
         toggleRead: (state, action) => {
             const { emailids } = action.payload;
             if(emailids.length === 1){
@@ -715,6 +723,6 @@ const mailSlice = createSlice({
     }
 })
 
-export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer, toggleRead } = mailSlice.actions;
+export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer, toggleRead, markAsRead } = mailSlice.actions;
 
 export default mailSlice;

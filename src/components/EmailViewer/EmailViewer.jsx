@@ -5,7 +5,7 @@ import UtilityButton from "../UtilityButton/UtilityButton";
 
 import './EmailViewer.css';
 import UserBtn from "./UserBtn/UserBtn";
-import { ClearEmailViewer, toggleRead } from "../../features/mail/mail";
+import { ClearEmailViewer, markAsRead, toggleRead } from "../../features/mail/mail";
 
 
 const EmailViewer = ({email=null}) => {
@@ -19,8 +19,8 @@ const EmailViewer = ({email=null}) => {
     useEffect(
         () => {
             //mark email as read
-            if(!read){
-                dispatch( toggleRead({emailids: [id] }) );
+            if(email !== null){
+                dispatch(markAsRead({emailid: id}));
             }
         },
         [email]
