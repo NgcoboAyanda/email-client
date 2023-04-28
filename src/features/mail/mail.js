@@ -670,10 +670,51 @@ const mailSlice = createSlice({
         },
         ClearEmailViewer: (state, action) => {
             return {...state, emailViewer: {...state.emailViewer, currentlyOpenEmail: null}};
-        }
+        },
+        toggleRead: (state, action) => {
+            const { emailids } = action.payload;
+            if(emailids.length === 1){
+                //if it's only one email we want to toggle the read status
+                state.folders[state.currentOpenFolder].emails.forEach(email => {
+                    if(email.id === emailids[0]){
+                        email.read =!email.read;
+                    }
+                })
+            }
+            else if(emailids.length > 1){
+                //if it's more than one email we want to check if all emails are read, if so we want to set the read status to false
+                //if there is even a single email that is unread, we want to set the read status of all emails to read
+                let selectedEmails = emailids.length;
+                let unreadEmails = 0;
+                state.folders[state.currentOpenFolder].emails.forEach( email => {
+                    if(emailids.includes(email.id)){
+                        if(!email.read){
+                            unreadEmails++;
+                        }
+                    }
+                } );
+                if(unreadEmails > 0){
+                    //if there is a single email that is unread, we want to set all emails read status to false
+                    state.folders[state.currentOpenFolder].emails.forEach( email =>{
+                        if(emailids.includes(email.id)){
+                            email.read = true;
+                        }
+                    });
+                }
+                else if(unreadEmails === 0){
+                    //if all emails have been read, we want to set all emails read status to false
+                    state.folders[state.currentOpenFolder].emails.forEach( email =>{
+                        if(emailids.includes(email.id)){
+                            email.read = false;
+                        }
+                    });
+                }
+            }
+        },
+
     }
 })
 
-export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer } = mailSlice.actions;
+export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer, toggleRead } = mailSlice.actions;
 
 export default mailSlice;

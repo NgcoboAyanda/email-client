@@ -18,6 +18,10 @@
     margin-left: var(--space-mid);
 }
 
+#mail-toolbar > div > .mail-paginator {
+    margin-left: auto;
+}
+
 .mail-toolbar__item_desktop {
     display: none;
 }
