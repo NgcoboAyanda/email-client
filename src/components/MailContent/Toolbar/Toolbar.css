@@ -19,7 +19,7 @@
 }
 
 #mail-toolbar > div > .mail-paginator {
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .mail-toolbar__item_desktop {
@@ -32,13 +32,17 @@
     background-color: var(--color-border-mid);
 }
 
-#more-btn{
-    margin-left: auto !important;
+#more-selections-btn {
+    margin-right: auto;
 }
 
 @media all and (min-width: 950px) {
     #mail-toolbar{
         display: flex !important;
+    }
+
+    #more-selections-btn{
+        margin-right: 0;
     }
 
     .mail-toolbar__item_desktop {
