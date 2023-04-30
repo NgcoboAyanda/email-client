@@ -680,6 +680,7 @@ const mailSlice = createSlice({
             })
         },
         toggleRead: (state, action) => {
+            //emailids is an array containing ids of all emails that are currently selected
             const { emailids } = action.payload;
             if(emailids.length === 1){
                 //if it's only one email we want to toggle the read status
@@ -719,10 +720,35 @@ const mailSlice = createSlice({
                 }
             }
         },
-
+        removeEmailFrom: (state, action) => {
+            const {folder, id} = action.payload;
+            let emailsCopy = [...state.folders[folder].emails]
+            emailsCopy = emailsCopy.filter( (email) => email.id !== id);
+            state.folders[folder].emails = emailsCopy;
+        },
+        moveEmailTo: (state, action) => {
+            const {newFolder} = action.payload;
+            let emailsGoingToNewFolder = [];
+            //the current folder emails
+            let currentFolderEmails = [...state.folders[state.currentOpenFolder].emails];
+            currentFolderEmails.forEach(email => {
+                if(email.selected){
+                    //save the email in emailsGoingToNewFolder but set selected to false
+                    emailsGoingToNewFolder.push({...email, selected: false});
+                    //remove all from current folder
+                    currentFolderEmails = currentFolderEmails.filter(e => e.id !== email.id);
+                }
+            });
+            //
+            state.folders[state.currentOpenFolder].emails = currentFolderEmails;
+            //adding all new new emails to folder
+            emailsGoingToNewFolder.forEach(email => {
+                state.folders[newFolder].emails.push(email);
+            });
+        }
     }
 })
 
-export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer, toggleRead, markAsRead } = mailSlice.actions;
+export const { updateMailFolder, setCurrentOpenFolder, toggleMobileSidebar, toggleAllEmailSelected, toggleSingleEmailSelected, ViewEmail, ClearEmailViewer, toggleRead, markAsRead, moveEmailTo } = mailSlice.actions;
 
 export default mailSlice;

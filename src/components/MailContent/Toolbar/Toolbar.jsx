@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ClearEmailViewer, toggleAllEmailSelected, toggleRead } from '../../../features/mail/mail';
+import { ClearEmailViewer, moveEmailTo, toggleAllEmailSelected, toggleRead } from '../../../features/mail/mail';
 import Checkbox from '../../Checkbox/Checkbox';
 import MailPaginator from '../../MailPaginator/MailPaginator';
 import UtilityButton from '../../UtilityButton/UtilityButton';
@@ -32,7 +32,7 @@ const Toolbar = ({className=''}) => {
     }
 
     const renderActionButton = () => {
-        if(numberOfSelectedEmails > 0){
+        if(numberOfSelectedEmails > 0 && currentOpenFolder !== 'allMail'){
             return (
                 <>
                     <UtilityButton
@@ -53,6 +53,7 @@ const Toolbar = ({className=''}) => {
                         label="Move to trash"
                         className="mail-toolbar__item   mail-toolbar__item_desktop"
                         id="move-to-trash-btn"
+                        onClick={() => dispatch( moveEmailTo({newFolder: "trash"}) )}
                         icon={
                             <svg viewBox="0 0 16 16" className="icon-16p toolbar-icon mauto" role="img" focusable="false" aria-hidden="true">
                             <g id="ic-trash">

@@ -41,6 +41,11 @@
         display: flex !important;
     }
 
+    #mail-toolbar > div > .mail-paginator {
+        margin-left: auto;
+    }
+    
+
     #more-selections-btn{
         margin-right: 0;
     }
